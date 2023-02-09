@@ -1,6 +1,7 @@
 import Display from "./Display";
 import { Component } from "react";
 import PanelDeBotones from "./PanelDeBotones";
+ 
 
 
 class App extends Component {
@@ -13,8 +14,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Display value={this.state.siguiente || this.state.total || "Motivense" } />
-      <PanelDeBotones/>
+        <Display value={this.state.siguiente || this.state.total || "Motivense"} />
+        <PanelDeBotones />
 
       </div>
     );
