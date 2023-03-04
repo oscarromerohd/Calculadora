@@ -30,9 +30,11 @@ export default function operaciones(estado: any, nombreDeBoton: any,) {
         return { siguiente: nombreDeBoton, total: null }
     }
 
-    if (nombreDeBoton === "/") {
+    if (nombreDeBoton === "÷") {
         if (estado.operador && estado.siguiente) {
+
             const result: any = operate(estado.total, estado.siguiente, estado.operador)
+            
             return { total: Big(result).div(Big("100").toString()), siguiente: null, operador: null }
         }
 
@@ -66,7 +68,7 @@ export default function operaciones(estado: any, nombreDeBoton: any,) {
     }
 
     if (nombreDeBoton === "+/-") {
-        
+
         if (estado.siguiente) return { siguiente: (-1 * parseFloat(estado.siguiente)) }
 
         if (estado.total) return { total: -1 * parseFloat(estado.total) }
@@ -82,11 +84,11 @@ export default function operaciones(estado: any, nombreDeBoton: any,) {
         }
     }
 
-    if (!estado.sigueinte) return { operador: nombreDeBoton }
+    if (!estado.siguiente) return { operador: nombreDeBoton }
 
     return {
-        total: estado.sigueinte,
-        sigueinte: null,
+        total: estado.siguiente,
+        siguiente: null,
         operador: nombreDeBoton,
     }
 

@@ -1,44 +1,43 @@
 import Button from "./Boton"
+import "./PanelDeBotones.css"
 
-const PanelDeBotones = ({clickHandle}: any) => {
+export default function PanelDeBotones ({clickHandle}: any) {
 
 const handleClick = (nombreDeBoton: any) => clickHandle(nombreDeBoton)
 
 return(
-    <div>
+    <div className="component-button-panel">
         <div>
-            <Button name="AC" clickHandle={handleClick}/>
-            <Button name="+/-" clickHandle={handleClick}/>
-            <Button name="%" clickHandle={handleClick}/>
-            <Button name="/" clickHandle={handleClick}/>
+            <Button name="AC" clickHandle={handleClick} gray/>
+            <Button name="+/-" clickHandle={handleClick} gray/>
+            <Button name="%" clickHandle={handleClick} gray/>
+            <Button name="÷" clickHandle={handleClick} orange/>
         </div>
         <div>
-            <Button name="7" clickHandle={handleClick}/>
-            <Button name="8" clickHandle={handleClick}/>
-            <Button name="9" clickHandle={handleClick}/>
-            <Button name="x" clickHandle={handleClick}/>
+            <Button name="7" clickHandle={handleClick} black/>
+            <Button name="8" clickHandle={handleClick} black/>
+            <Button name="9" clickHandle={handleClick} black/>
+            <Button name="x" clickHandle={handleClick} orange/>
         </div>
         <div>
-            <Button name="4" clickHandle={handleClick}/>
-            <Button name="5" clickHandle={handleClick}/>
-            <Button name="6" clickHandle={handleClick}/>
-            <Button name="-" clickHandle={handleClick}/>
+            <Button name="4" clickHandle={handleClick} black/>
+            <Button name="5" clickHandle={handleClick} black/>
+            <Button name="6" clickHandle={handleClick} black/>
+            <Button name="-" clickHandle={handleClick} orange/>
         </div>
         <div>
-            <Button name="1" clickHandle={handleClick}/>
-            <Button name="2" clickHandle={handleClick}/>
-            <Button name="3" clickHandle={handleClick}/>
-            <Button name="+" clickHandle={handleClick}/>
+            <Button name="1" clickHandle={handleClick} black/>
+            <Button name="2" clickHandle={handleClick} black/>
+            <Button name="3" clickHandle={handleClick} black/>
+            <Button name="+" clickHandle={handleClick} orange/>
         </div>
         <div>
-            <Button name="0" clickHandle={handleClick}/>
-            <Button name="." clickHandle={handleClick}/>
-            <Button name="=" clickHandle={handleClick}/>
-            <Button name="klk" clickHandle={handleClick}/>
+            <Button name="0" clickHandle={handleClick} wide/>
+            <Button name="." clickHandle={handleClick} black/>
+            <Button name="=" clickHandle={handleClick} orange/>
         </div>
 
     </div>
-)
+);
 
 }
-export default PanelDeBotones;
